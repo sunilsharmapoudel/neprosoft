@@ -1,29 +1,62 @@
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
+    function animate() {
+        document.querySelector('#bar-1').classList.toggle('animate');
+        document.querySelector('#bar-2').classList.toggle('animate');
+        document.querySelector('#bar-3').classList.toggle('animate');
+        document.querySelector('#drawer').classList.toggle('drawer');
+
+    }
+
     return (
         <>
-            <div className=" bg-sky-100  w-full h-auto">
+            <header className="w-full z-10 ">
                 <div className="flex justify-center w-auto h-28">
                     <div className="flex items-center  justify-between w-[90%]">
-                        <div className="logo">
+                        <NavLink to="/"><div className="logo">
                             <img className="lg:h-10 md:h-8 max-md:h-[1.7rem] w-max" src="./images/rect-tarentparent.svg" alt="neprosoft-logo" />
-                        </div>
+                        </div></NavLink>
+
                         <div className="lg:text-xl md:text-md w-[65%] max-md:hidden">
                             <ul className="flex justify-evenly items-center">
-                                <li className="cursor-pointer">About us</li>
-                                <li className="cursor-pointer">Services</li>
-                                <li className="cursor-pointer">Contact us</li>
-                                <li className="cursor-pointer">Blogs</li>
-                                <li className="border-2 p-2 max-md:p-1 rounded-xl border-black cursor-pointer hover:bg-slate-500 hover:border-blue-600 hover:text-white transition-all">Schedule Meeting</li>
+                                <NavLink to="/about">
+                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">About us</li></NavLink>
+                                <NavLink to="/services"> <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Services</li></NavLink>
+                                <NavLink to="/contact">
+                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Contact us</li>
+                                </NavLink>
+                                <NavLink to="blogs">
+                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Blogs</li>
+                                </NavLink>
+
+                                <li className="border-2 p-2 max-md:p-1 rounded-xl border-black cursor-pointer hover:bg-blue-700 hover:border-blue-600 hover:text-white transition-all">Schedule Meeting</li>
                             </ul>
                         </div>
-                        <div className="cursor-pointer">
-                            <span className="h-1 w-7 mb-1  bg-blue-700 block  rounded-md"></span>
-                            <span className="h-1 w-7 bg-blue-700 block  rounded-md"></span>
-                            <span className="h-1 w-7 mt-1  bg-blue-700 block  rounded-md"></span>
-                        </div>
+                        {
+                            <div id="hamburger-icon" className="md:hidden cursor-pointer" onClick={animate}>
+                                <span id="bar-1" className="h-1 w-6 mb-1  bg-blue-700 block  rounded-md transition-all"></span>
+                                <span id="bar-2" className="h-1 w-6 bg-blue-700 block  rounded-md transition-all"></span>
+                                <span id="bar-3" className="h-1 w-6 mt-1  bg-blue-700 block  rounded-md transition-all"></span>
+                            </div>
+                        }
                     </div>
                 </div>
-            </div>
+
+                <div id="drawer" className="drawer flex fixed items-center h-full w-full md:hidden transition-all">
+                    <div className="absolute left-0 right-0 top-20">
+                        <ul className="flex flex-col items-center space-y-8 text-xl ">
+                            <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem]  hover:text-blue-700">About us</li>
+                            <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700 ">Services</li>
+                            <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Contact us</li>
+                            <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Blogs</li>
+                            <li className="border-2 p-2 max-md:p-1 rounded-xl border-black cursor-pointer hover:bg-blue-700 hover:border-blue-600 hover:text-white transition-all">Schedule Meeting</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </header>
+
         </>
     )
 }

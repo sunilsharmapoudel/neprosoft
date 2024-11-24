@@ -4,3 +4,19 @@
 body {
   font-family: Alata, sans-serif;
 }
+
+.animate#bar-1 {
+  transform: translate(0, 8px) rotate(-45deg);
+}
+
+.animate#bar-2 {
+  opacity: 0;
+}
+
+.animate#bar-3 {
+  transform: translate(0, -8px) rotate(45deg);
+}
+
+.drawer {
+  display: none;
+}
