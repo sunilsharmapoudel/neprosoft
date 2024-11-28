@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import ScheduleButton from "./ScheduleButton";
 
 const Header = () => {
     function animate() {
@@ -11,12 +12,12 @@ const Header = () => {
 
     return (
         <>
-            <header className="w-full z-10">
-                <div className="mx-auto w-[95%]">
+            <header className="z-10 sticky top-0 w-full border-b-2 bg-white rounded-b-lg shadow-md scroll">
+                <div className="mx-auto w-[90%]">
                     <div className="flex justify-between items-center h-28">
                         <div className="logo">
                             <NavLink to="/">
-                                <img className="lg:h-10 md:h-8 max-md:h-[1.7rem] w-max" src="./images/rect-tarentparent.svg" alt="neprosoft-logo" />
+                                <img className="lg:h-10 md:h-8 max-md:h-[1.7rem] w-max" src="/images/rect-tarentparent.svg" alt="neprosoft-logo" />
                             </NavLink>
                         </div>
 
@@ -32,7 +33,7 @@ const Header = () => {
                                     <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Blogs</li>
                                 </NavLink>
 
-                                <li className="border-2 p-2 max-md:p-1 rounded-xl border-black cursor-pointer hover:bg-blue-700 hover:border-blue-600 hover:text-white transition-all">Schedule Meeting</li>
+                                <ScheduleButton text="Schedule Meeting" />
                             </ul>
                         </div>
 
