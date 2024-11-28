@@ -1,9 +1,10 @@
+import HomeHero from "../components/HomeHero"
 
 const LandingPage = () => {
   return (
     <>
-      <div className="flex flex-row flex-wrap">
-      
+      <div className="w-[95%] mx-auto">
+        <HomeHero />
       </div>
     </>
   )

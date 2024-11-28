@@ -11,15 +11,17 @@ const Header = () => {
 
     return (
         <>
-            <header className="w-full z-10 ">
-                <div className="flex justify-center w-auto h-28">
-                    <div className="flex items-center  justify-between w-[90%]">
-                        <NavLink to="/"><div className="logo">
-                            <img className="lg:h-10 md:h-8 max-md:h-[1.7rem] w-max" src="./images/rect-tarentparent.svg" alt="neprosoft-logo" />
-                        </div></NavLink>
+            <header className="w-full z-10">
+                <div className="mx-auto w-[95%]">
+                    <div className="flex justify-between items-center h-28">
+                        <div className="logo">
+                            <NavLink to="/">
+                                <img className="lg:h-10 md:h-8 max-md:h-[1.7rem] w-max" src="./images/rect-tarentparent.svg" alt="neprosoft-logo" />
+                            </NavLink>
+                        </div>
 
-                        <div className="lg:text-xl md:text-md w-[65%] max-md:hidden">
-                            <ul className="flex justify-evenly items-center">
+                        <div className="lg:text-xl md:text-lg max-md:hidden">
+                            <ul className="flex items-center lg:space-x-14 md:space-x-5">
                                 <NavLink to="/about">
                                     <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">About us</li></NavLink>
                                 <NavLink to="/services"> <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Services</li></NavLink>
@@ -33,6 +35,7 @@ const Header = () => {
                                 <li className="border-2 p-2 max-md:p-1 rounded-xl border-black cursor-pointer hover:bg-blue-700 hover:border-blue-600 hover:text-white transition-all">Schedule Meeting</li>
                             </ul>
                         </div>
+
                         {
                             <div id="hamburger-icon" className="md:hidden cursor-pointer" onClick={animate}>
                                 <span id="bar-1" className="h-1 w-6 mb-1  bg-blue-700 block  rounded-md transition-all"></span>
@@ -40,10 +43,12 @@ const Header = () => {
                                 <span id="bar-3" className="h-1 w-6 mt-1  bg-blue-700 block  rounded-md transition-all"></span>
                             </div>
                         }
+
+
                     </div>
                 </div>
 
-                <div id="drawer" className="drawer flex fixed items-center h-full w-full md:hidden transition-all">
+                <div id="drawer" className="drawer flex fixed items-center h-full w-full md:hidden transition-all bg-white">
                     <div className="absolute left-0 right-0 top-20">
                         <ul className="flex flex-col items-center space-y-8 text-xl ">
                             <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem]  hover:text-blue-700">About us</li>
@@ -54,9 +59,7 @@ const Header = () => {
                         </ul>
                     </div>
                 </div>
-
             </header>
-
         </>
     )
 }
