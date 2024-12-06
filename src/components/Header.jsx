@@ -22,8 +22,6 @@ const Header = () => {
         };
     }, [isMenuOpen]);
 
-
-
     return (
         <>
             <header className="z-10 sticky top-0 w-full border-b-2 bg-white rounded-b-lg shadow-md">
@@ -37,13 +35,16 @@ const Header = () => {
 
                         <div className="lg:text-xl md:text-lg max-md:hidden">
                             <ul className="flex items-center lg:space-x-14 md:space-x-5">
-                                <NavLink to="/about">
-                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">About us</li></NavLink>
-                                <NavLink to="/services"> <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Services</li></NavLink>
-                                <NavLink to="/contact">
+                                <NavLink to="/about" onClick={() => setisMenuOpen(false)}>
+                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">About us</li>
+                                </NavLink>
+                                <NavLink to="/services" onClick={() => setisMenuOpen(false)}>
+                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Services</li>
+                                </NavLink>
+                                <NavLink to="/contact" onClick={() => setisMenuOpen(false)}>
                                     <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Contact us</li>
                                 </NavLink>
-                                <NavLink to="blogs">
+                                <NavLink to="/blogs" onClick={() => setisMenuOpen(false)}>
                                     <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Blogs</li>
                                 </NavLink>
 
@@ -54,49 +55,58 @@ const Header = () => {
                         <div className="md:hidden">
                             {
                                 !isMenuOpen ? <div id="hamburger-icon" className="md:hidden cursor-pointer" onClick={() => {
-                                    setisMenuOpen(!isMenuOpen)
-                                    animate()
-
+                                    setisMenuOpen(!isMenuOpen);
+                                    animate();
                                 }}>
                                     <span id="bar-1" className="h-1 w-6 mb-1  bg-blue-700 block  rounded-md transition-all"></span>
                                     <span id="bar-2" className="h-1 w-6 bg-blue-700 block  rounded-md transition-all"></span>
                                     <span id="bar-3" className="h-1 w-6 mt-1  bg-blue-700 block  rounded-md transition-all"></span>
                                 </div> : <div onClick={() => {
-                                    setisMenuOpen(!isMenuOpen)
-                                    animate()
+                                    setisMenuOpen(!isMenuOpen);
+                                    animate();
                                 }}>
                                     <span id="bar-1" className="h-1 w-6 mb-1  bg-blue-700 block  rounded-md transition-all"></span>
                                     <span id="bar-2" className="h-1 w-6 bg-blue-700 block  rounded-md transition-all"></span>
                                     <span id="bar-3" className="h-1 w-6 mt-1  bg-blue-700 block  rounded-md transition-all"></span>
                                 </div>}
                         </div>
+
                         {
                             isMenuOpen && <div className="bg-white flex justify-center items-center h-svh w-full md:hidden transition-all absolute left-0 right-0 top-20">
                                 <ul className="flex flex-col items-center space-y-8 text-xl ">
-                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem]  hover:text-blue-700">About us</li>
-                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700 ">Services</li>
-                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Contact us</li>
-                                    <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Blogs</li>
+                                    <NavLink to="/about" onClick={() => {
+                                        setisMenuOpen(!isMenuOpen);
+                                        animate();
+                                    }}>
+                                        <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem]  hover:text-blue-700">About us</li>
+                                    </NavLink>
+                                    <NavLink to="/services" onClick={() => {
+                                        setisMenuOpen(!isMenuOpen);
+                                        animate();
+                                    }}>
+                                        <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700 ">Services</li>
+                                    </NavLink>
+                                    <NavLink to="/contact" onClick={() => {
+                                        setisMenuOpen(!isMenuOpen);
+                                        animate();
+                                    }}>
+                                        <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Contact us</li>
+                                    </NavLink>
+                                    <NavLink to="/blogs" onClick={() => {
+                                        setisMenuOpen(!isMenuOpen);
+                                        animate();
+                                    }}>
+                                        <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Blogs</li>
+                                    </NavLink>
                                     <li className="border-2 p-2 max-md:p-1 rounded-xl border-black cursor-pointer hover:bg-blue-700 hover:border-blue-600 hover:text-white transition-all">Schedule Meeting</li>
                                 </ul>
                             </div>
                         }
                     </div>
                 </div>
-
             </header>
-
-            {/* <div>
-                                    <ul className="flex flex-col items-center space-y-8 text-xl ">
-                                        <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem]  hover:text-blue-700">About us</li>
-                                        <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700 ">Services</li>
-                                        <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Contact us</li>
-                                        <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Blogs</li>
-                                        <li className="border-2 p-2 max-md:p-1 rounded-xl border-black cursor-pointer hover:bg-blue-700 hover:border-blue-600 hover:text-white transition-all">Schedule Meeting</li>
-                                    </ul>
-                                </div> */}
         </>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import { FcLink } from "react-icons/fc";
-const ServicesCard = ({color, textColor='black', borderColor='black'}) => {
+const ServicesCard = ({ color, textColor = 'black', borderColor = 'black', title }) => {
     return (
         <>
-            <div className={`flex border-2 h-max w-max border-b-8 rounded-2xl p-4 bg-[${color}] gap-10 mb-10 border-${borderColor}`}>
+            <div className={`flex border-2 h-max w-max border-b-8 rounded-2xl p-4 gap-10 mb-10 border-${borderColor} hover:scale-105 transition-all`} style={{ backgroundColor: color }}>
                 <div className="flex flex-1 flex-col justify-evenly">
                     <h3 className="inline-block bg-[var(--secondary)] rounded p-1 text-white">Web Development</h3>
                     <div className="inline-flex items-center space-x-5">

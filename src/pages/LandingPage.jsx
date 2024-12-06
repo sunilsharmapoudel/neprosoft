@@ -1,3 +1,4 @@
+import HomeAbout from "../components/HomeAbout"
 import HomeHero from "../components/HomeHero"
 import HomeServices from "../components/HomeServices"
 
@@ -6,7 +7,7 @@ const LandingPage = () => {
     <>
       <div className="w-[90%] mx-auto">
         <HomeHero />
-        <HomeServices />
+        <HomeServices />  
       </div>
     </>
   )

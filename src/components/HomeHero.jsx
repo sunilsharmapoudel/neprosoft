@@ -3,9 +3,9 @@ import ScheduleButton from "./ScheduleButton"
 const HomeHero = () => {
     return (
         <>
-            <div className="flex flex-row mt-8 justify-between flex-wrap-reverse">
+            <div className="flex flex-row mt-8 justify-between flex-wrap-reverse gap-6">
                 <div className="flex flex-col flex-1">
-                    <h2 className="bg-gradient-to-b from-[#5e17eb] to-[#8c52ff] text-6xl text-transparent bg-clip-text mb-4">Neprosoft develops what your business needs for success</h2>
+                    <h2 className="bg-gradient-to-b from-[#5e17eb] to-[#8c52ff] text-6xl text-transparent bg-clip-text mb-4 max-md:text-4xl">Neprosoft develops what your business needs for success</h2>
 
                     <p className="bg-gradient-to-r from-[#5e17eb] to-[#8c52ff] text-xl font-bold text-transparent bg-clip-text">
                         Neprosoft: Innovate. Build. Grow.
@@ -17,11 +17,9 @@ const HomeHero = () => {
                     <ScheduleButton text="Schedule Meeting" width="w-max" fontsize="text-xl" />
                 </div>
                 <div className="flex">
-                    <img className="w-full h-full" src="./images/sq-logo.svg" alt="" />
+                    <img className="w-full h-auto" src="./images/neprosoft-hero-bg.webp" alt="neprosoft" />
                 </div>
-
             </div>
-
         </>
     )
 }
