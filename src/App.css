@@ -17,6 +17,10 @@ body {
   transform: translate(0, -8px) rotate(45deg);
 }
 
-.drawer {
-  display: none;
+:root{
+  --primary:#5e17eb;
+  --secondary:#8c52ff;
+  --accent:#e5e7eb;
+  --tertiary:gold;
+  
 }

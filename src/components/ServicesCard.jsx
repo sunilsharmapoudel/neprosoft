@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom"
 import { FcLink } from "react-icons/fc";
-const ServicesCard = () => {
+const ServicesCard = ({color, textColor='black', borderColor='black'}) => {
     return (
         <>
-            <div className=" border-[#252529] border-2 rounded-2xl p-4 border-b-8 w-[45%]">
-                <div className="flex justify-between">
-                    <div className="flex flex-col justify-around">
-                        <h3 className='text-3xl font-bold'>Web Development</h3>
-                        <div className="inline-flex space-x-2 items-center">
-                            <FcLink style={{ backgroundColor: "#252529", fontSize: '30px', borderRadius: "50%", padding: "4px" }} />
-                            <span className="text-2xl"><Link to="/services">Learn More</Link></span>
-                        </div>
-                    </div>
-                    <div className="w-max">
-                        <img className="w-max" src="/images/website-development.svg" alt="" />
+            <div className={`flex border-2 h-max w-max border-b-8 rounded-2xl p-4 bg-[${color}] gap-10 mb-10 border-${borderColor}`}>
+                <div className="flex flex-1 flex-col justify-evenly">
+                    <h3 className="inline-block bg-[var(--secondary)] rounded p-1 text-white">Web Development</h3>
+                    <div className="inline-flex items-center space-x-5">
+                        <FcLink size={30} />
+                        <span className={`text-${textColor}`}>Learn More</span>
                     </div>
                 </div>
+                <div className="">
+                    <Link to="/">
+                        <img className="h-full w-full" src="/images/website-development.svg" alt="neprosoft-logo" />
+                    </Link>
+                </div>
+
             </div>
         </>
     )
