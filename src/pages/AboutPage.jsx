@@ -1,18 +1,13 @@
-import React from "react";
+import ActionButton from "../components/ActionButton";
+import Cta from "../components/Cta";
+import PageTitle from "../components/PageTitle";
 
 const AboutUs = () => {
   return (
     <section className="bg-white text-[--primary] py-16">
       <div className="container mx-auto px-6">
-        
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-semibold text-[--primary] mb-10">About Neprosoft</h1>
-          <p className="text-lg font-light text-gray-700 max-w-3xl mx-auto">
-            Neprosoft is proud to be one of Nepal’s leading IT companies, committed to delivering innovative, custom software solutions, dynamic websites, and powerful mobile applications. We help businesses scale through expert IT consulting and seamless support.
-          </p>
-        </div>
+        <PageTitle title="About Neprosoft" desc="Neprosoft is proud to be one of Nepal’s leading IT companies, committed to delivering innovative, custom software solutions, dynamic websites, and powerful mobile applications. We help businesses scale through expert IT consulting and seamless support." />
 
-        
         <div className="mb-16 flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
           <div className="md:w-1/2">
             <h2 className="text-2xl font-semibold text-[--primary] mb-10">How We Formed</h2>
@@ -29,7 +24,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-       
+
         <div className="mb-16">
           <h2 className="text-2xl font-semibold text-[--primary] mb-10">Our Priorities</h2>
           <ul className="space-y-4">
@@ -48,15 +43,15 @@ const AboutUs = () => {
           </ul>
         </div>
 
-       
+
         <div className="mb-16 bg-[--accent] p-8 rounded-xl text-center">
           <h2 className="text-2xl font-semibold text-[--primary] mb-6">Our Mission</h2>
-          <p className="text-lg font-light text-gray-700">
+          <p className="lg:px-16 text-lg font-light text-gray-700 ">
             Our mission is to lead Nepal’s IT industry by providing innovative, reliable, and scalable solutions that empower businesses to succeed. We strive to create exceptional digital experiences that have a lasting impact on our clients.
           </p>
         </div>
 
-       
+
         <div className="mb-16">
           <h2 className="text-2xl font-semibold text-[--primary] mb-10 text-center">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -81,7 +76,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-       
+
         <div className="mb-16">
           <h2 className="text-2xl font-semibold text-[--primary] mb-10 text-center">Our Work in Action</h2>
           <div className="flex justify-center">
@@ -92,19 +87,8 @@ const AboutUs = () => {
           </div>
         </div>
 
-       
-        <div className="text-center mt-12">
-          <h2 className="text-2xl font-semibold text-[--primary] mb-4">Ready to Start Your Journey?</h2>
-          <p className="text-lg font-light text-gray-700 mb-6">
-            Partner with Neprosoft today and experience the future of technology. Let’s create something extraordinary together.
-          </p>
-          <a
-            href="#contact"
-            className="inline-block bg-[--secondary] text-white py-3 px-6 rounded-lg text-xl hover:bg-[--primary] transition-all"
-          >
-            Get in Touch
-          </a>
-        </div>
+
+        <Cta heading="Ready to Start Your Journey?" desc="Partner with Neprosoft today and experience the future of technology. Let’s create something extraordinary together." btnText="Get in touch" />
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import ScheduleButton from "./ScheduleButton";
 import { useEffect, useState } from "react";
+import ActionButton from "./ActionButton";
 
 const Header = () => {
     const [isMenuOpen, setisMenuOpen] = useState(false);
@@ -48,7 +48,7 @@ const Header = () => {
                                     <li className="cursor-pointer hover:border-b-blue-700 hover:border-b-[3px] hover:rounded-sm transition-all hover:translate-y-[0.2rem] hover:text-blue-700">Blogs</li>
                                 </NavLink>
 
-                                <ScheduleButton text="Schedule Meeting" />
+                                <ActionButton text="Schedule Meeting" />
                             </ul>
                         </div>
 

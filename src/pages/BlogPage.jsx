@@ -1,17 +1,22 @@
-import React from 'react';
-
 const BlogPage = ({ post }) => {
-    // Sample post data; replace this with dynamic data or API response
     const samplePost = post || {
         title: "The Future of Web Development",
         author: "Sunil Sharma",
         date: "December 6, 2024",
-        coverImage: "/images/blog1.jpg",
+        thumbail: "/images/kathmandu-valley.webp",
         content: `
       Web development is an ever-evolving field. With advancements in AI, cloud computing, and responsive design, 
       developers are crafting faster, more scalable applications. This article explores how emerging technologies like 
       WebAssembly, Jamstack, and AI-powered tools are redefining the landscape.
+
+      Paragraph 2 is an ever-evolving field. With advancements in AI, cloud computing, and responsive design, 
+      developers are crafting faster, more scalable applications. This article explores how emerging technologies like 
+      WebAssembly, Jamstack, and AI-powered tools are redefining the landscape.-
       
+      Web development is an ever-evolving field. With advancements in AI, cloud computing, and responsive design, 
+      developers are crafting faster, more scalable applications. This article explores how emerging technologies like 
+      WebAssembly, Jamstack, and AI-powered tools are redefining the landscape.-
+
       ### Key Highlights:
       1. WebAssembly allows near-native performance for web applications.
       2. Jamstack simplifies the developer experience and improves performance.
@@ -21,16 +26,16 @@ const BlogPage = ({ post }) => {
     `,
     };
 
-    const { title, author, date, coverImage, content } = samplePost;
+    const { title, author, date, thumbail, content } = samplePost;
 
     return (
         <section className="bg-gray-50 py-16">
             <div className="container mx-auto px-4 lg:px-20">
                 <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
                     <img
-                        src={coverImage}
+                        src={thumbail}
                         alt={title}
-                        className="w-full h-64 object-cover"
+                        className="w-full h-full"
                     />
                     <div className="p-6">
                         <div className='my-10'>
@@ -42,17 +47,12 @@ const BlogPage = ({ post }) => {
                         </div>
 
 
-                        <article className="prose prose-lg max-w-none text-gray-700">
-                            {content.split("\n").map((paragraph, idx) =>
-                                paragraph.startsWith("###") ? (
-                                    <h2 key={idx} className="text-2xl font-semibold mt-8 mb-4">
-                                        {paragraph.replace("### ", "")}
-                                    </h2>
-                                ) : (
-                                    <p key={idx} className="mb-4">
-                                        {paragraph}
-                                    </p>
-                                )
+                        <article className="prose prose-lg max-w-none text-gray-700 mb-2">
+                            {content.split("-").map((paragraph, idx) => (
+                                <p key={idx} className="leading-normal">
+                                    {paragraph}
+                                </p>
+                            )
                             )}
                         </article>
                     </div>

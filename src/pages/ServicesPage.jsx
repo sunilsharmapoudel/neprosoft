@@ -1,13 +1,13 @@
+import ActionButton from "../components/ActionButton";
+import Cta from "../components/Cta";
+import PageTitle from "../components/PageTitle";
+
 const ServicesPage = () => {
   return (
     <div className="bg-white text-[--primary] py-16">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-semibold text-[--primary] mb-10">Our Services</h1>
-          <p className="text-lg font-light text-gray-700 max-w-3xl mx-auto">
-            Neprosoft offers a range of IT services to meet your business needs, from custom software development to mobile app solutions. Our goal is to provide innovative, efficient, and scalable digital solutions.
-          </p>
-        </div>
+
+        <PageTitle title="Our Services" desc="Neprosoft offers a range of IT services to meet your business needs, from custom software development to mobile app solutions. Our goal is to provide innovative, efficient, and scalable digital solutions." />
 
         <section className="mb-16">
           <h2 className="text-2xl font-semibold text-[--primary] mb-6">Our Core Services</h2>
@@ -112,18 +112,7 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        <div className="text-center mt-12">
-          <h2 className="text-2xl font-semibold text-[--primary] mb-6">Ready to Start Your Project?</h2>
-          <p className="text-lg font-light text-gray-700 mb-6">
-            Let's collaborate and build something extraordinary. Contact us today to bring your ideas to life!
-          </p>
-          <a
-            href="#contact"
-            className="inline-block bg-[--secondary] text-white py-3 px-6 rounded-lg text-xl hover:bg-[--primary] transition-all"
-          >
-            Get in Touch
-          </a>
-        </div>
+        <Cta heading="Ready to Start Your Journey?" desc=" Let's collaborate and build something extraordinary. Contact us today to bring your ideas to life!" btnText="Get in touch" />
       </div>
     </div>
   );

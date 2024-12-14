@@ -19,7 +19,6 @@ const router = createBrowserRouter(
       <Route path='services' element={<ServicesPage />} />
       <Route path='blogs' element={<BlogsPage />} />
       <Route path='blog' element={<BlogPage />} />
-
     </Route>
   )
 )

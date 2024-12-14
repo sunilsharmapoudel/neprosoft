@@ -1,3 +1,4 @@
+import SectionTitle from "./SectionTitle"
 import ServicesCard from "./ServicesCard"
 
 const HomeServices = () => {
@@ -5,10 +6,7 @@ const HomeServices = () => {
         <>
             <div className="flex flex-row mt-8">
                 <div className="flex flex-col gap-16 w-full">
-                    <div className="flex  items-center space-x-10 max-md:space-x-5">
-                        <h2 className="bg-[var(--secondary)] rounded-md p-1 text-2xl text-white">Services</h2>
-                        <p className="w-3/4 text-sm">Neprosoft offers custom software, web and mobile app development, reliable maintenance, and expert IT consulting to drive your business forward. These services includes:</p>
-                    </div>
+                    <SectionTitle title="Services" desc="Neprosoft offers custom software, web and mobile app development, reliable maintenance, and expert IT consulting to drive your business forward. These services includes:" />
                     <div className="flex flex-wrap justify-evenly">
                         <ServicesCard title="Web Development" image="" />
                         <ServicesCard title="Custom Software Development" image="" color="#1f1f1f" textColor="white" />
